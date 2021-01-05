@@ -18,14 +18,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkAccelerationStructureVersionKHR")]
-    public unsafe partial struct AccelerationStructureVersionKHR
+    [NativeName("Name", "VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeaturesKHR
     {
-        public AccelerationStructureVersionKHR
+        public PhysicalDeviceShaderTerminateInvocationFeaturesKHR
         (
-            StructureType? sType = StructureType.AccelerationStructureVersionKhr,
+            StructureType? sType = StructureType.PhysicalDeviceShaderTerminateInvocationFeaturesKhr,
             void* pNext = null,
-            byte* versionData = null
+            Bool32? shaderTerminateInvocation = null
         ) : this()
         {
             if (sType is not null)
@@ -38,9 +38,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (versionData is not null)
+            if (shaderTerminateInvocation is not null)
             {
-                VersionData = versionData;
+                ShaderTerminateInvocation = shaderTerminateInvocation.Value;
             }
         }
 
@@ -55,9 +55,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t*")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "versionData")]
-        public byte* VersionData;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderTerminateInvocation")]
+        public Bool32 ShaderTerminateInvocation;
     }
 }

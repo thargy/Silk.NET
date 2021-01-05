@@ -18,22 +18,21 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkPhysicalDeviceRayTracingPropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceRayTracingPropertiesKHR
+    [NativeName("Name", "VkPhysicalDeviceRayTracingPipelinePropertiesKHR")]
+    public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     {
-        public PhysicalDeviceRayTracingPropertiesKHR
+        public PhysicalDeviceRayTracingPipelinePropertiesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceRayTracingPropertiesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceRayTracingPipelinePropertiesKhr,
             void* pNext = null,
             uint? shaderGroupHandleSize = null,
-            uint? maxRecursionDepth = null,
+            uint? maxRayRecursionDepth = null,
             uint? maxShaderGroupStride = null,
             uint? shaderGroupBaseAlignment = null,
-            ulong? maxGeometryCount = null,
-            ulong? maxInstanceCount = null,
-            ulong? maxPrimitiveCount = null,
-            uint? maxDescriptorSetAccelerationStructures = null,
-            uint? shaderGroupHandleCaptureReplaySize = null
+            uint? shaderGroupHandleCaptureReplaySize = null,
+            uint? maxRayDispatchInvocationCount = null,
+            uint? shaderGroupHandleAlignment = null,
+            uint? maxRayHitAttributeSize = null
         ) : this()
         {
             if (sType is not null)
@@ -51,9 +50,9 @@ namespace Silk.NET.Vulkan
                 ShaderGroupHandleSize = shaderGroupHandleSize.Value;
             }
 
-            if (maxRecursionDepth is not null)
+            if (maxRayRecursionDepth is not null)
             {
-                MaxRecursionDepth = maxRecursionDepth.Value;
+                MaxRayRecursionDepth = maxRayRecursionDepth.Value;
             }
 
             if (maxShaderGroupStride is not null)
@@ -66,29 +65,24 @@ namespace Silk.NET.Vulkan
                 ShaderGroupBaseAlignment = shaderGroupBaseAlignment.Value;
             }
 
-            if (maxGeometryCount is not null)
-            {
-                MaxGeometryCount = maxGeometryCount.Value;
-            }
-
-            if (maxInstanceCount is not null)
-            {
-                MaxInstanceCount = maxInstanceCount.Value;
-            }
-
-            if (maxPrimitiveCount is not null)
-            {
-                MaxPrimitiveCount = maxPrimitiveCount.Value;
-            }
-
-            if (maxDescriptorSetAccelerationStructures is not null)
-            {
-                MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures.Value;
-            }
-
             if (shaderGroupHandleCaptureReplaySize is not null)
             {
                 ShaderGroupHandleCaptureReplaySize = shaderGroupHandleCaptureReplaySize.Value;
+            }
+
+            if (maxRayDispatchInvocationCount is not null)
+            {
+                MaxRayDispatchInvocationCount = maxRayDispatchInvocationCount.Value;
+            }
+
+            if (shaderGroupHandleAlignment is not null)
+            {
+                ShaderGroupHandleAlignment = shaderGroupHandleAlignment.Value;
+            }
+
+            if (maxRayHitAttributeSize is not null)
+            {
+                MaxRayHitAttributeSize = maxRayHitAttributeSize.Value;
             }
         }
 
@@ -110,8 +104,8 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxRecursionDepth")]
-        public uint MaxRecursionDepth;
+        [NativeName("Name", "maxRayRecursionDepth")]
+        public uint MaxRayRecursionDepth;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -123,29 +117,24 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "shaderGroupBaseAlignment")]
         public uint ShaderGroupBaseAlignment;
 /// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxGeometryCount")]
-        public ulong MaxGeometryCount;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxInstanceCount")]
-        public ulong MaxInstanceCount;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxPrimitiveCount")]
-        public ulong MaxPrimitiveCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxDescriptorSetAccelerationStructures")]
-        public uint MaxDescriptorSetAccelerationStructures;
-/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "shaderGroupHandleCaptureReplaySize")]
         public uint ShaderGroupHandleCaptureReplaySize;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxRayDispatchInvocationCount")]
+        public uint MaxRayDispatchInvocationCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "shaderGroupHandleAlignment")]
+        public uint ShaderGroupHandleAlignment;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxRayHitAttributeSize")]
+        public uint MaxRayHitAttributeSize;
     }
 }

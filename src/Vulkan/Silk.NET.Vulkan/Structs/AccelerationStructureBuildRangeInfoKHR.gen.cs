@@ -18,10 +18,10 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkAccelerationStructureBuildOffsetInfoKHR")]
-    public unsafe partial struct AccelerationStructureBuildOffsetInfoKHR
+    [NativeName("Name", "VkAccelerationStructureBuildRangeInfoKHR")]
+    public unsafe partial struct AccelerationStructureBuildRangeInfoKHR
     {
-        public AccelerationStructureBuildOffsetInfoKHR
+        public AccelerationStructureBuildRangeInfoKHR
         (
             uint? primitiveCount = null,
             uint? primitiveOffset = null,

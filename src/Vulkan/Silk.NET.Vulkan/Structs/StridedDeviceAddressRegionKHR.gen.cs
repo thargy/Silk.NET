@@ -18,25 +18,19 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkStridedBufferRegionKHR")]
-    public unsafe partial struct StridedBufferRegionKHR
+    [NativeName("Name", "VkStridedDeviceAddressRegionKHR")]
+    public unsafe partial struct StridedDeviceAddressRegionKHR
     {
-        public StridedBufferRegionKHR
+        public StridedDeviceAddressRegionKHR
         (
-            Buffer? buffer = null,
-            ulong? offset = null,
+            ulong? deviceAddress = null,
             ulong? stride = null,
             ulong? size = null
         ) : this()
         {
-            if (buffer is not null)
+            if (deviceAddress is not null)
             {
-                Buffer = buffer.Value;
-            }
-
-            if (offset is not null)
-            {
-                Offset = offset.Value;
+                DeviceAddress = deviceAddress.Value;
             }
 
             if (stride is not null)
@@ -51,15 +45,10 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
-        [NativeName("Type", "VkBuffer")]
-        [NativeName("Type.Name", "VkBuffer")]
-        [NativeName("Name", "buffer")]
-        public Buffer Buffer;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "offset")]
-        public ulong Offset;
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "deviceAddress")]
+        public ulong DeviceAddress;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]

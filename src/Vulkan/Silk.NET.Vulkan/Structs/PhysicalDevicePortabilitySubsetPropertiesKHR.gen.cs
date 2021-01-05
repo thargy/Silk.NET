@@ -18,14 +18,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkDeferredOperationInfoKHR")]
-    public unsafe partial struct DeferredOperationInfoKHR
+    [NativeName("Name", "VkPhysicalDevicePortabilitySubsetPropertiesKHR")]
+    public unsafe partial struct PhysicalDevicePortabilitySubsetPropertiesKHR
     {
-        public DeferredOperationInfoKHR
+        public PhysicalDevicePortabilitySubsetPropertiesKHR
         (
-            StructureType? sType = StructureType.DeferredOperationInfoKhr,
+            StructureType? sType = StructureType.PhysicalDevicePortabilitySubsetPropertiesKhr,
             void* pNext = null,
-            DeferredOperationKHR? operationHandle = null
+            uint? minVertexInputBindingStrideAlignment = null
         ) : this()
         {
             if (sType is not null)
@@ -38,9 +38,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (operationHandle is not null)
+            if (minVertexInputBindingStrideAlignment is not null)
             {
-                OperationHandle = operationHandle.Value;
+                MinVertexInputBindingStrideAlignment = minVertexInputBindingStrideAlignment.Value;
             }
         }
 
@@ -55,9 +55,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkDeferredOperationKHR")]
-        [NativeName("Type.Name", "VkDeferredOperationKHR")]
-        [NativeName("Name", "operationHandle")]
-        public DeferredOperationKHR OperationHandle;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "minVertexInputBindingStrideAlignment")]
+        public uint MinVertexInputBindingStrideAlignment;
     }
 }
